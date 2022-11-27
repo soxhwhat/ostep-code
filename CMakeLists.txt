@@ -1,5 +1,6 @@
 project(ostep)
 
-#FILE(GLOB_RECURSE SRC_FILES *.c)
-#add_executable(ostep ${SRC_FILES})
-add_executable(ostep test.cpp)
+add_executable(cpu intro/cpu.c)
+add_executable(mem intro/mem.c)
+add_executable(mutil cmake-build-debug/mutil.cpp)
+add_executable(IO_Redirect cmake-build-debug/IO_Redirect.cpp)

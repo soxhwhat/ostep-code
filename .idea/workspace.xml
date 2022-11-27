@@ -7,7 +7,12 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated />
+    <generated>
+      <config projectName="ostep" targetName="IO_Redirect" />
+      <config projectName="ostep" targetName="cpu" />
+      <config projectName="ostep" targetName="mem" />
+      <config projectName="ostep" targetName="mutil" />
+    </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
@@ -15,7 +20,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2f348a9-531d-4f4e-80bb-2123ec5a133c" name="变更" comment="feature：clion使用初体验" />
+    <list default="true" id="e2f348a9-531d-4f4e-80bb-2123ec5a133c" name="变更" comment="feature：操作系统CPU和内存虚拟化">
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/IO_Redirect.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/mutil.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro/cpu.c" beforeDir="false" afterPath="$PROJECT_DIR$/intro/cpu.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intro/mem.c" beforeDir="false" afterPath="$PROJECT_DIR$/intro/mem.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,28 +69,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/GitRepos&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "D:/GitRepos/ostep/cmake-build-debug",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "terminal"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitRepos\ostep\cmake-build-debug" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake 应用程序.mutil">
+    <configuration name="IO_Redirect" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ostep" TARGET_NAME="IO_Redirect" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ostep" RUN_TARGET_NAME="IO_Redirect">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="temp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="a" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="ostep" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="ostep">
+    <configuration name="cpu" type="CMakeRunConfiguration" factoryName="Application" singleton="false" PROGRAM_PARAMS="b" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ostep" TARGET_NAME="cpu" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ostep" RUN_TARGET_NAME="cpu">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="mem" type="CMakeRunConfiguration" factoryName="Application" singleton="false" PROGRAM_PARAMS="test" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/a.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ostep" TARGET_NAME="mem" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ostep" RUN_TARGET_NAME="mem">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mutil" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="2" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ostep" TARGET_NAME="mutil" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ostep" RUN_TARGET_NAME="mutil">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="temp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="a" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ostep" TARGET_NAME="ostep" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ostep" RUN_TARGET_NAME="ostep">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake 应用程序.temp" />
+      <item itemvalue="CMake 应用程序.cpu" />
+      <item itemvalue="CMake 应用程序.IO_Redirect" />
+      <item itemvalue="CMake 应用程序.mem" />
+      <item itemvalue="CMake 应用程序.mutil" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -88,7 +135,9 @@
       <option name="presentableId" value="Default" />
       <updated>1669530201647</updated>
       <workItem from="1669530204507" duration="700000" />
-      <workItem from="1669530962452" duration="1259000" />
+      <workItem from="1669530962452" duration="1479000" />
+      <workItem from="1669542124681" duration="1948000" />
+      <workItem from="1669544103226" duration="7996000" />
     </task>
     <task id="LOCAL-00001" summary="feature：clion使用初体验">
       <created>1669531749705</created>
@@ -125,5 +174,16 @@
     <MESSAGE value="feature：clion使用初体验" />
     <MESSAGE value="feature：Clion使用初体验" />
     <option name="LAST_COMMIT_MESSAGE" value="feature：Clion使用初体验" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/intro/mem.c</url>
+          <line>13</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
