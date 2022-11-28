@@ -16,6 +16,7 @@
       <config projectName="ostep" targetName="threads" />
       <config projectName="ostep" targetName="mem" />
       <config projectName="ostep" targetName="p3" />
+      <config projectName="ostep" targetName="p4" />
       <config projectName="ostep" targetName="mutil" />
       <config projectName="ostep" targetName="io" />
     </generated>
@@ -27,14 +28,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2f348a9-531d-4f4e-80bb-2123ec5a133c" name="变更" comment="feature：操作系统CPU和内存虚拟化&#10;&#10;change:&#10;1.多进程操作&#10;2.HWZen的输出重定向代码">
+    <list default="true" id="e2f348a9-531d-4f4e-80bb-2123ec5a133c" name="变更" comment="feature：进程API&#10;&#10;harvest:&#10;1.fork()系统调用：操作系统提供创建新进程的方法。新创建的进程几乎与调用进程完全一样，对操作系统来说，有两个完全一样的p1程序在运行，并都从fork()系统调用中返回。新创建的进程称为子进程（child），原来的进程称为父进程（parent）。子进程不会从main()函数开始执行（因此hello world信息只输出了一次），而是直接从fork()系统调用返回，就好像是它自己调用了fork()。&#10;2.wait():父进程调用wait()，延迟自己的执行，直到子进程执行完毕。当子进程结束时，wait()才返回父进程。&#10;3.exec():可以让子进程执行与父进程不同的程序。&#10;exec()会从可执行程序中加载代码和静态数据，并用它覆盖自己的代码段、堆、栈、内存空间，操作系统执行该进程，将参数通过argv传递给该进程，对exec()的成功调用永远不会返回。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpu-api/p2.c" beforeDir="false" afterPath="$PROJECT_DIR$/cpu-api/p2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpu-api/p3.c" beforeDir="false" afterPath="$PROJECT_DIR$/cpu-api/p3.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/intro/mem.c" beforeDir="false" afterPath="$PROJECT_DIR$/intro/mem.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpu-api/p4.c" beforeDir="false" afterPath="$PROJECT_DIR$/cpu-api/p4.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +93,7 @@
       <recent name="D:\GitRepos\ostep\cmake-build-debug" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake 应用程序.p3">
+  <component name="RunManager" selected="CMake 应用程序.p4">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -142,6 +139,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="p4" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ostep" TARGET_NAME="p4" CONFIG_NAME="Debug-MinGW" RUN_TARGET_PROJECT_NAME="ostep" RUN_TARGET_NAME="p4">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="temp (1)" type="CMakeRunConfiguration" factoryName="Application" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ostep" TARGET_NAME="temp" CONFIG_NAME="Debug-MinGW" RUN_TARGET_PROJECT_NAME="ostep" RUN_TARGET_NAME="temp">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -173,6 +175,7 @@
       <item itemvalue="CMake 应用程序.p1" />
       <item itemvalue="CMake 应用程序.p2" />
       <item itemvalue="CMake 应用程序.p3" />
+      <item itemvalue="CMake 应用程序.p4" />
       <item itemvalue="CMake 应用程序.threads" />
       <item itemvalue="CMake 应用程序.temp (1)" />
       <item itemvalue="Makefile 目标.io" />
@@ -198,7 +201,7 @@
       <workItem from="1669544103226" duration="14632000" />
       <workItem from="1669611177950" duration="1695000" />
       <workItem from="1669619141721" duration="1766000" />
-      <workItem from="1669624271880" duration="5378000" />
+      <workItem from="1669624271880" duration="7386000" />
     </task>
     <task id="LOCAL-00001" summary="feature：clion使用初体验">
       <created>1669531749705</created>
@@ -221,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669556588079</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feature：进程API&#10;&#10;harvest:&#10;1.fork()系统调用：操作系统提供创建新进程的方法。新创建的进程几乎与调用进程完全一样，对操作系统来说，有两个完全一样的p1程序在运行，并都从fork()系统调用中返回。新创建的进程称为子进程（child），原来的进程称为父进程（parent）。子进程不会从main()函数开始执行（因此hello world信息只输出了一次），而是直接从fork()系统调用返回，就好像是它自己调用了fork()。&#10;2.wait():父进程调用wait()，延迟自己的执行，直到子进程执行完毕。当子进程结束时，wait()才返回父进程。&#10;3.exec():可以让子进程执行与父进程不同的程序。&#10;exec()会从可执行程序中加载代码和静态数据，并用它覆盖自己的代码段、堆、栈、内存空间，操作系统执行该进程，将参数通过argv传递给该进程，对exec()的成功调用永远不会返回。">
+      <created>1669631869288</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669631869288</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +252,8 @@
     <MESSAGE value="feature：clion使用初体验" />
     <MESSAGE value="feature：Clion使用初体验" />
     <MESSAGE value="feature：操作系统CPU和内存虚拟化&#10;&#10;change:&#10;1.多进程操作&#10;2.HWZen的输出重定向代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature：操作系统CPU和内存虚拟化&#10;&#10;change:&#10;1.多进程操作&#10;2.HWZen的输出重定向代码" />
+    <MESSAGE value="feature：进程API&#10;&#10;harvest:&#10;1.fork()系统调用：操作系统提供创建新进程的方法。新创建的进程几乎与调用进程完全一样，对操作系统来说，有两个完全一样的p1程序在运行，并都从fork()系统调用中返回。新创建的进程称为子进程（child），原来的进程称为父进程（parent）。子进程不会从main()函数开始执行（因此hello world信息只输出了一次），而是直接从fork()系统调用返回，就好像是它自己调用了fork()。&#10;2.wait():父进程调用wait()，延迟自己的执行，直到子进程执行完毕。当子进程结束时，wait()才返回父进程。&#10;3.exec():可以让子进程执行与父进程不同的程序。&#10;exec()会从可执行程序中加载代码和静态数据，并用它覆盖自己的代码段、堆、栈、内存空间，操作系统执行该进程，将参数通过argv传递给该进程，对exec()的成功调用永远不会返回。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature：进程API&#10;&#10;harvest:&#10;1.fork()系统调用：操作系统提供创建新进程的方法。新创建的进程几乎与调用进程完全一样，对操作系统来说，有两个完全一样的p1程序在运行，并都从fork()系统调用中返回。新创建的进程称为子进程（child），原来的进程称为父进程（parent）。子进程不会从main()函数开始执行（因此hello world信息只输出了一次），而是直接从fork()系统调用返回，就好像是它自己调用了fork()。&#10;2.wait():父进程调用wait()，延迟自己的执行，直到子进程执行完毕。当子进程结束时，wait()才返回父进程。&#10;3.exec():可以让子进程执行与父进程不同的程序。&#10;exec()会从可执行程序中加载代码和静态数据，并用它覆盖自己的代码段、堆、栈、内存空间，操作系统执行该进程，将参数通过argv传递给该进程，对exec()的成功调用永远不会返回。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
